@@ -6,7 +6,7 @@
 // (and preferably with an "Unlit/Color" shader), it will cover the full
 // screen with the solid color.
 //
-// [Aside: the "a_" in the class name is just to make file be listed first]
+// [Aside: the "a_" in the class name is just to make this file be listed first]
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
