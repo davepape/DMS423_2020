@@ -1,6 +1,9 @@
-﻿// a_pingpongcolor
+// a_pingpongcolor
 // Dave Pape,  20 Sep 2020
 // 
+// Credit note:
+//   code, with slight modification, taken from https://docs.unity3d.com/ScriptReference/Material-color.html
+//
 // Class to make an object change color smoothly, in a "ping-pong" pattern.
 // If this class is attached to a cube positioned to fill the camera view
 // (and preferably with an "Unlit/Color" shader), it will cover the full
