@@ -14,15 +14,15 @@ public class circle1 : MonoBehaviour
     public float radius = 5f;
     public float speed = 1f;
 
-	void Start ()
+    void Start ()
         {
-	    }
+        }
 	
-	void Update ()
+    void Update ()
         {
         float angle = Time.time * speed;
         float x = Mathf.Cos(angle) * radius;
         float y = Mathf.Sin(angle) * radius;
         transform.localPosition = new Vector3(x, y, 0f);
-	    }
+        }
 }

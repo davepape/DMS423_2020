@@ -14,11 +14,11 @@ public class circleChildren : MonoBehaviour
     public float speed = 1f;
     public float radius = 1f;
 
-	void Start ()
+    void Start ()
         {
-	    }
+        }
 	
-	void Update () 
+    void Update () 
         {
         for (int i=0; i < transform.childCount; i++)
             {
@@ -26,5 +26,5 @@ public class circleChildren : MonoBehaviour
             float angle = Time.time * speed + 2f*Mathf.PI*i/transform.childCount;
             child.localPosition = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) * radius;
             }
-	    }
+        }
 }
