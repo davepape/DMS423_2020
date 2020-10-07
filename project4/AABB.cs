@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿// AABB
+// by Dave Pape, 6 Oct 2020
+//
+// Demonstration of an axis-aligned bounding box.  The code takes values for minimum & maximum X
+// and minimum & maximum Y, and creates a Unity Rect using that data.
+// It then constructs a cube primitive that covers that box's area, and changes the color of
+// the cube based on whether the mouse is inside or outside the box.
+// !! Note that the code assumes the camera is using an orthographic projection.
+//
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
