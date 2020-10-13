@@ -1,15 +1,16 @@
-// triangles.cs
+// dynamicTriangles.cs
 // by Dave Pape, 12 Oct 2020
 //
-// Create a Unity mesh that consists of 4 points and 2 triangles.
+// Variation of triangles.cs that changes the vertex data every frame.
 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class triangles : MonoBehaviour
+public class dynamicTriangles : MonoBehaviour
 {
     public Material material;
+    private Vector3[] myVertices;
 
     void Start()
         {
@@ -18,15 +19,22 @@ public class triangles : MonoBehaviour
         if (!(gameObject.GetComponent<MeshRenderer>()))
             gameObject.AddComponent<MeshRenderer>();
         GetComponent<Renderer>().material = material;
-        Vector3[] newVertices = new Vector3[] { new Vector3(-2f, 0f, -1f),
+        myVertices = new Vector3[] { new Vector3(-2f, 0f, -1f),
                                                 new Vector3(0f, 1f, -1f),
                                                 new Vector3(1f, 0f, -1f),
                                                 new Vector3(0f, -1f, -1f) };
         int[] newTriangles = new int[] { 0, 1, 2,  0, 2, 3 };
         Mesh m = GetComponent<MeshFilter>().mesh;
         m.Clear();
-        m.SetVertices(newVertices);
+        m.SetVertices(myVertices);
         m.SetTriangles(newTriangles,0);
         m.RecalculateNormals();
+        }
+    
+    void Update()
+        {
+        Mesh m = GetComponent<MeshFilter>().mesh;
+        myVertices[2].x = Mathf.Sin(Time.time) + 1;
+        m.SetVertices(myVertices);
         }
 }
