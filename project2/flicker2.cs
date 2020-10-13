@@ -22,27 +22,26 @@ public class flicker2 : MonoBehaviour
     private bool is_on = true;
 
     void Start()
-    	{
+        {
         mat = GetComponent<Renderer>().material;
         lastFlickerTime = Time.time;
-    	}
+        }
 
     void Update()
-	    {
+        {
         if (Time.time - lastFlickerTime >= flickerTime)
-        	{
-        	is_on = ! is_on;
-        	lastFlickerTime = Time.time;
-        	}
-
+            {
+            is_on = ! is_on;
+            lastFlickerTime = Time.time;
+            }
         if (is_on)
-        	{
-        	float lerp = Mathf.PingPong(Time.time, duration) / duration;
-	        mat.color = Color.Lerp(colorStart, colorEnd, lerp);
-	       	}
+            {
+            float lerp = Mathf.PingPong(Time.time, duration) / duration;
+            mat.color = Color.Lerp(colorStart, colorEnd, lerp);
+            }
         else
-        	{
-	        mat.color = Color.black;
-        	}
+            {
+            mat.color = Color.black;
+            }
     	}
 }

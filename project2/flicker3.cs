@@ -23,35 +23,35 @@ public class flicker3 : MonoBehaviour
     private bool is_on = true;
 
     void Start()
-    	{
+        {
         mat = GetComponent<Renderer>().material;
         colorStartTime = Time.time;
         lastFlickerTime = Time.time;
-    	}
+        }
 
     void Update()
-	    {
+        {
         if (Time.time - lastFlickerTime >= flickerTime)
-        	{
-        	is_on = ! is_on;
-        	lastFlickerTime = Time.time;
-        	}
+            {
+            is_on = ! is_on;
+            lastFlickerTime = Time.time;
+            }
 
         if (is_on)
-        	{
-        	float lerp = (Time.time - colorStartTime) / duration;
-        	int c1 = curColor;
-        	int c2 = (curColor+1) % colors.Length;
-	        mat.color = Color.Lerp(colors[c1], colors[c2], lerp);
-        	if (lerp >= 1.0f)
-        		{
-        		curColor = (curColor + 1) % colors.Length;
-        		colorStartTime = Time.time;
-        		}
-	       	}
+            {
+            float lerp = (Time.time - colorStartTime) / duration;
+            int c1 = curColor;
+            int c2 = (curColor+1) % colors.Length;
+            mat.color = Color.Lerp(colors[c1], colors[c2], lerp);
+            if (lerp >= 1.0f)
+                {
+                curColor = (curColor + 1) % colors.Length;
+                colorStartTime = Time.time;
+                }
+            }
         else
-        	{
-	        mat.color = Color.black;
-        	}
-    	}
+            {
+            mat.color = Color.black;
+            }
+        }
 }
