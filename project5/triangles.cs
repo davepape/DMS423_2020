@@ -18,15 +18,15 @@ public class triangles : MonoBehaviour
         if (!(gameObject.GetComponent<MeshRenderer>()))
             gameObject.AddComponent<MeshRenderer>();
         GetComponent<Renderer>().material = material;
-        Vector3[] newVertices = new Vector3[] { new Vector3(-2f, 0f, -1f),
-                                                new Vector3(0f, 1f, -1f),
-                                                new Vector3(1f, 0f, -1f),
-                                                new Vector3(0f, -1f, -1f) };
+        Vector3[] newVertices = new Vector3[] { new Vector3(-2, 0, -1),
+                                                new Vector3(0, 1, -1),
+                                                new Vector3(1, 0, -1),
+                                                new Vector3(0, -1, -1) };
         int[] newTriangles = new int[] { 0, 1, 2,  0, 2, 3 };
         Mesh m = GetComponent<MeshFilter>().mesh;
         m.Clear();
-        m.SetVertices(newVertices);
-        m.SetTriangles(newTriangles,0);
+        m.vertices = newVertices;
+        m.triangles = newTriangles;
         m.RecalculateNormals();
         }
 }

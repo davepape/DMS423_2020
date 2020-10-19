@@ -32,8 +32,8 @@ public class trianglesWithColors : MonoBehaviour
         int[] newTriangles = new int[] { 0, 1, 2,   0, 2, 3 };
         Mesh m = GetComponent<MeshFilter>().mesh;
         m.Clear();
-        m.SetVertices(newVertices);
-        m.SetColors(newColors);
-        m.SetTriangles(newTriangles,0);
+        m.vertices = newVertices;
+        m.colors = newColors;
+        m.triangles = newTriangles;
         }
 }

@@ -26,8 +26,8 @@ public class dynamicTriangles : MonoBehaviour
         int[] newTriangles = new int[] { 0, 1, 2,  0, 2, 3 };
         Mesh m = GetComponent<MeshFilter>().mesh;
         m.Clear();
-        m.SetVertices(myVertices);
-        m.SetTriangles(newTriangles,0);
+        m.vertices = myVertices;
+        m.triangles = newTriangles;
         m.RecalculateNormals();
         }
     
@@ -35,6 +35,6 @@ public class dynamicTriangles : MonoBehaviour
         {
         Mesh m = GetComponent<MeshFilter>().mesh;
         myVertices[2].x = Mathf.Sin(Time.time) + 1;
-        m.SetVertices(myVertices);
+        m.vertices = myVertices;
         }
 }

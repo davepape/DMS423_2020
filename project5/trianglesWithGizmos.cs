@@ -2,9 +2,6 @@
 // by Dave Pape, 12 Oct 2020
 //
 // Create a Unity mesh that consists of 4 points and 2 triangles.
-// This adds "gizmos" - a sphere at each vertex and a wireframe version of
-// the mesh, which are visible in the Scene view while running - to help
-// debugging.
 
 using System.Collections;
 using System.Collections.Generic;
@@ -29,8 +26,8 @@ public class trianglesWithGizmos : MonoBehaviour
         int[] newTriangles = new int[] { 0, 1, 2,  0, 2, 3 };
         Mesh m = GetComponent<MeshFilter>().mesh;
         m.Clear();
-        m.SetVertices(myVertices);
-        m.SetTriangles(newTriangles,0);
+        m.vertices = myVertices;
+        m.triangles = newTriangles;
         m.RecalculateNormals();
         }
 
