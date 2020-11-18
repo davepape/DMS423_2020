@@ -9,7 +9,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Numerics;
+using Numerics = System.Numerics;
 
 public class mandelbrot : MonoBehaviour
 {
@@ -36,8 +36,8 @@ public class mandelbrot : MonoBehaviour
 
     Color Mandelbrot(float x, float y)
     	{
-    	Complex c = new Complex(x,y);
-    	Complex z = c;
+    	Numerics.Complex c = new Numerics.Complex(x,y);
+    	Numerics.Complex z = c;
     	for (int iter=0; iter < maxIter; iter++)
     		{
     		z = z * z + c;
